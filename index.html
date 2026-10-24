@@ -1,0 +1,816 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>وين غلطت؟</title>
+<meta name="description" content="مبادرة وين غلطت؟ — منصة لاكتشاف الأخطاء الرياضية وفهمها وتصحيحها">
+<meta name="theme-color" content="#FAF8F3">
+<meta name="apple-mobile-web-app-title" content="وين غلطت؟">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" sizes="64x64" href="data:image/png;base64,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">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1024 1024%22><rect width=%221024%22 height=%221024%22 fill=%22#FAF8F3%22/><line x1=%220%22 y1=%22128%22 x2=%221024%22 y2=%22128%22 stroke=%22#E6E9F2%22 stroke-width=%226%22/><line x1=%220%22 y1=%22256%22 x2=%221024%22 y2=%22256%22 stroke=%22#E6E9F2%22 stroke-width=%226%22/><line x1=%220%22 y1=%22384%22 x2=%221024%22 y2=%22384%22 stroke=%22#E6E9F2%22 stroke-width=%226%22/><line x1=%220%22 y1=%22512%22 x2=%221024%22 y2=%22512%22 stroke=%22#E6E9F2%22 stroke-width=%226%22/><line x1=%220%22 y1=%22640%22 x2=%221024%22 y2=%22640%22 stroke=%22#E6E9F2%22 stroke-width=%226%22/><line x1=%220%22 y1=%22768%22 x2=%221024%22 y2=%22768%22 stroke=%22#E6E9F2%22 stroke-width=%226%22/><line x1=%220%22 y1=%22896%22 x2=%221024%22 y2=%22896%22 stroke=%22#E6E9F2%22 stroke-width=%226%22/><line x1=%22905%22 y1=%220%22 x2=%22905%22 y2=%221024%22 stroke=%22#F2C1BC%22 stroke-width=%228%22/><path d=%22M193 187V226Q193 261 185.0 282.5Q177 304 162.0 320.0Q147 336 126 354Q72 402 48.0 449.0Q24 496 25 554Q26 610 56.5 658.0Q87 706 136.5 736.0Q186 766 243 766Q284 767 321.0 754.0Q358 741 390.0 716.5Q422 692 447 656Q455 646 473.0 634.0Q491 622 531 607L360 494Q358 528 351.5 548.5Q345 569 339 579Q321 606 300.0 619.0Q279 632 253 632Q212 632 184.5 607.0Q157 582 157 545Q157 520 168.5 501.5Q180 483 198.5 467.0Q217 451 238 433Q261 414 281.5 390.5Q302 367 315.0 333.5Q328 300 328 248V187ZM259 0Q227 0 204.0 23.0Q181 46 181 78Q181 110 204.0 133.0Q227 156 259 156Q291 156 314.0 133.0Q337 110 337 78Q337 46 314.0 23.0Q291 0 259 0Z%22 fill=%22#1E2230%22 transform=%22translate%28330.8,765.0%29 scale%280.6266,-0.6266%29%22/><path d=%22M330 285 C 500 150, 800 210, 825 470 C 850 735, 640 875, 480 870 C 270 862, 170 690, 195 480 C 210 370, 270 300, 400 250%22 fill=%22none%22 stroke=%22#D9443A%22 stroke-width=%2240%22 stroke-linecap=%22round%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAF8F3;--card:#fff;--ink:#1E2230;--muted:#6E7281;--line:#E8E3D7;--rule:#EEF0F6;
+  --red:#D9443A;--red-soft:#FDECEA;--green:#2B9465;--green-soft:#E6F4EC;
+  --ind:#3346B8;--ind-soft:#ECEFFC;--hl:#FFE680;--r:16px
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'IBM Plex Sans Arabic',system-ui,sans-serif;line-height:1.7}
+button{font:inherit;cursor:pointer;color:inherit}
+input,select,textarea{font:inherit;color:inherit}
+h1,h2,h3{line-height:1.35;margin:0}
+.wrap{max-width:780px;margin:0 auto;padding:20px 16px 60px}
+[hidden]{display:none!important}
+
+/* header */
+header.top{position:sticky;top:0;z-index:10;background:rgba(250,248,243,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px 6px;max-width:780px;margin:0 auto}
+.logo{font-family:'Reem Kufi',sans-serif;font-weight:700;font-size:1.4rem;display:flex;align-items:center;gap:4px;background:none;border:0;padding:0}
+.ring{position:relative;color:var(--red);padding:0 6px}
+.ring svg{position:absolute;inset:-5px -6px;width:calc(100% + 12px);height:calc(100% + 10px);pointer-events:none}
+.ring path,.mark path{fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.who{display:flex;align-items:center;gap:8px}
+.pts{font-weight:700;font-size:.88rem;background:var(--hl);padding:2px 12px;border-radius:999px;white-space:nowrap}
+.namebtn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:2px 12px;font-size:.85rem;max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+nav.tabs{display:flex;gap:4px;overflow-x:auto;padding:2px 16px 10px;max-width:780px;margin:0 auto;scrollbar-width:none}
+nav.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;border:0;background:none;color:var(--muted);padding:6px 12px;border-radius:999px;font-size:.9rem;font-weight:500}
+.tab.on{background:var(--ink);color:#fff}
+
+/* generic */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.btn{border:0;background:var(--ind);color:#fff;padding:11px 20px;border-radius:12px;font-weight:600}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn.dark{background:var(--ink)}
+.btn.sm{padding:7px 14px;font-size:.88rem}
+.btn:disabled{opacity:.5;cursor:default}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.muted{color:var(--muted)}
+.small{font-size:.86rem}
+.chip{display:inline-block;font-size:.8rem;font-weight:600;background:var(--ind-soft);color:var(--ind);padding:2px 10px;border-radius:999px}
+.chip.week{background:#FFF4C2;color:#7A5B00}
+.field{display:block;width:100%;border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:10px 12px}
+.field:focus,.ans:focus{outline:none;border-color:var(--ind)}
+label.lb{display:block;font-size:.88rem;font-weight:600;margin:12px 0 4px}
+.sec-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:28px 0 12px}
+.sec-title h2{font-size:1.15rem}
+
+/* math */
+.m{display:inline-block;unicode-bidi:isolate;direction:ltr;white-space:nowrap}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.82em;line-height:1.15;margin:0 2px}
+.fr>span:first-child{border-bottom:1.5px solid currentColor;padding:0 3px}
+
+/* home */
+.hero{text-align:center;padding:26px 0 8px}
+.appicon{display:block;width:92px;height:92px;margin:0 auto 14px;border-radius:22px;box-shadow:0 6px 18px rgba(30,34,48,.12),0 0 0 1px var(--line)}
+.hero .logo{font-size:2.6rem;justify-content:center;margin:0 auto}
+.hero .ring svg{inset:-8px -10px;width:calc(100% + 20px);height:calc(100% + 16px)}
+.hero p.lead{color:var(--muted);margin:14px auto 0;max-width:480px}
+.slogan{margin:22px auto 0;max-width:520px;text-align:center;font-weight:600;background:#fff;border:1px dashed #E9B9B4;border-radius:var(--r);padding:12px 16px}
+.slogan b{color:var(--red)}
+.feat{text-align:right;border:1px solid var(--line);background:#fff;border-radius:var(--r);padding:16px;transition:transform .15s,border-color .15s}
+.feat:hover{transform:translateY(-2px);border-color:#CBD2F5}
+.feat .ic{font-size:1.6rem;line-height:1}
+.feat h3{font-size:1.02rem;margin:8px 0 2px}
+.feat p{margin:0;font-size:.88rem;color:var(--muted)}
+.namebox{max-width:420px;margin:22px auto 0;text-align:center}
+.namebox .row{justify-content:center;margin-top:10px}
+.pickname{border:1px solid var(--line);background:#fff;border-radius:999px;padding:3px 12px;font-size:.88rem}
+
+/* runner */
+.runhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-bottom:12px}
+.runhead .count{margin-inline-start:auto;font-size:.88rem;color:var(--muted)}
+.lvl{font-size:.82rem;color:var(--muted);letter-spacing:.5px}
+.phases{display:flex;gap:6px;margin-bottom:12px}
+.ph{flex:1;font-size:.8rem;text-align:center;padding:6px 4px;border-radius:10px;background:#F1EEE6;color:var(--muted);font-weight:600}
+.ph.on{background:var(--ind);color:#fff}
+.ph.done{background:var(--green-soft);color:var(--green)}
+.qcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;margin-bottom:12px;text-align:center}
+.qtext{color:var(--muted);font-weight:500}
+.expr{font-size:2rem;font-weight:700;margin-top:2px}
+.sheet{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:8px 0;overflow:hidden}
+.sheet::before{content:'';position:absolute;top:0;bottom:0;right:46px;width:1.5px;background:#F2C1BC}
+.sheet-h{padding:4px 62px 8px 16px;font-size:.84rem;color:var(--muted)}
+.step{display:grid;grid-template-columns:46px 1fr;align-items:center;width:100%;text-align:right;background:none;border:0;border-top:1px solid var(--rule);padding:12px 0 12px 16px;position:relative;transition:background .15s,opacity .2s}
+.sheet:not(.pick) .step{cursor:default}
+.sheet.pick .step:hover{background:#FFFBEA}
+.step .num{text-align:center;color:var(--muted);font-weight:600}
+.step .body{padding-right:16px}
+.step .m{font-size:1.22rem;font-weight:600}
+.step .note{display:block;font-size:.84rem;color:var(--muted)}
+.step.bad .m{color:var(--red)}
+.step.good .num{color:var(--green)}
+.step.good .num::after{content:' ✓'}
+.step.faded{opacity:.42}
+.step .mark{position:absolute;top:6px;bottom:6px;right:52px;left:10px;width:calc(100% - 62px);height:calc(100% - 12px);color:var(--red);pointer-events:none}
+.mark path{stroke-dasharray:1;stroke-dashoffset:1;animation:draw .6s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.shake{animation:shake .35s}
+@keyframes shake{25%{transform:translateX(5px)}50%{transform:translateX(-5px)}75%{transform:translateX(3px)}}
+.stage{margin-top:12px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px}
+.stage h3{font-size:1.02rem;margin-bottom:10px}
+.opts{display:grid;gap:8px}
+.opt{text-align:right;border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:11px 14px;font-weight:500}
+.opt:hover:not(:disabled){border-color:#CBD2F5}
+.opt.right{border-color:var(--green);background:var(--green-soft)}
+.opt.wrong{border-color:var(--red);background:var(--red-soft)}
+.opt:disabled{cursor:default}
+.fb{margin-top:12px;padding:10px 14px;border-radius:12px;font-weight:500}
+.fb:empty{display:none}
+.fb.good{background:var(--green-soft);color:#1D6B49}
+.fb.bad{background:var(--red-soft);color:#A3302A}
+.fb.info{background:var(--ind-soft);color:#24318A}
+.ans{font-size:1.3rem;padding:9px 14px;border:1.5px solid var(--line);border-radius:12px;width:170px;text-align:center;direction:ltr;background:#fff}
+.fixcard{margin-top:12px;border-right:4px solid var(--green);background:#F6FBF8;border-radius:12px;padding:12px 16px}
+.fixcard ol{margin:6px 0 8px;padding-right:22px}
+.fixcard li{margin:4px 0}
+.fixcard li .m{font-weight:600;font-size:1.08rem}
+.fixcard .note{color:var(--muted);font-size:.84rem;margin-right:6px}
+.next{margin-top:14px}
+.float{position:fixed;top:92px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--hl);font-weight:700;padding:6px 18px;border-radius:999px;z-index:50;animation:up 1.1s forwards;pointer-events:none}
+@keyframes up{0%{opacity:0;transform:translate(-50%,10px)}20%{opacity:1;transform:translate(-50%,0)}80%{opacity:1}100%{opacity:0;transform:translate(-50%,-14px)}}
+
+/* skills picker */
+.skill{text-align:right;border:1px solid var(--line);background:#fff;border-radius:var(--r);padding:14px 16px;display:flex;gap:12px;align-items:center}
+.skill:hover{border-color:#CBD2F5}
+.skill .sym{flex:0 0 46px;height:46px;border-radius:12px;background:var(--ind-soft);color:var(--ind);display:grid;place-items:center;font-weight:700;direction:ltr;font-size:.95rem}
+.skill.week .sym{background:#FFF4C2;color:#7A5B00}
+.skill b{display:block}
+.skill span.small{color:var(--muted)}
+
+/* progress */
+.bars{display:grid;gap:12px}
+.barrow .lbl{display:flex;justify-content:space-between;font-size:.92rem;margin-bottom:4px}
+.track{height:10px;background:#EFECE4;border-radius:99px;overflow:hidden}
+.fill{height:100%;border-radius:99px;background:var(--ind);transition:width .6s}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.stat b{display:block;font-size:1.5rem;line-height:1.3}
+.stat span{font-size:.84rem;color:var(--muted)}
+.tag{display:inline-block;font-size:.75rem;font-weight:600;padding:1px 8px;border-radius:999px;margin-right:6px}
+.t-good{background:var(--green-soft);color:var(--green)}
+.t-mid{background:#FFF4C2;color:#7A5B00}
+.t-low{background:var(--red-soft);color:var(--red)}
+.t-none{background:#F1EEE6;color:var(--muted)}
+.misslist{display:grid;gap:10px}
+.miss{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.miss p{margin:2px 0 0;font-size:.86rem;color:var(--muted)}
+
+/* summary */
+.summary{text-align:center;padding:28px 18px}
+.bigscore{font-size:3rem;font-weight:700;line-height:1.2;margin:8px 0}
+
+/* teacher */
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{padding:8px 6px;border-bottom:1px solid var(--rule);text-align:right}
+th{color:var(--muted);font-weight:600;font-size:.82rem}
+.tablewrap{overflow-x:auto}
+.plist{display:grid;gap:8px}
+.pitem{display:flex;gap:10px;justify-content:space-between;align-items:center;border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:#fff}
+textarea.field{min-height:90px;resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:520px){
+  .expr{font-size:1.6rem}
+  .step .m{font-size:1.08rem}
+  .two{grid-template-columns:1fr}
+  .ph{font-size:.72rem}
+  .hero .logo{font-size:2.1rem}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="bar">
+    <button class="logo" onclick="show('home')" aria-label="الرئيسية">وين <span class="ring">غلطت<svg viewBox="0 0 100 50" preserveAspectRatio="none" aria-hidden="true"><path d="M10 30 C 6 12, 58 2, 88 13 C 101 21, 92 45, 50 46 C 17 47, 3 37, 14 18"/></svg></span>؟</button>
+    <div class="who" id="who"></div>
+  </div>
+  <nav class="tabs" id="tabs">
+    <button class="tab" data-v="home">🏠 الرئيسية</button>
+    <button class="tab" data-v="practice">✏️ مسار التصحيح</button>
+    <button class="tab" data-v="challenge">🏆 تحدي الدقة</button>
+    <button class="tab" data-v="progress">📊 خريطة تقدمي</button>
+    <button class="tab" data-v="teacher">👩‍🏫 المعلمة</button>
+  </nav>
+</header>
+
+<main class="wrap">
+  <section class="view" id="v-home"></section>
+  <section class="view" id="v-practice" hidden></section>
+  <section class="view" id="v-challenge" hidden></section>
+  <section class="view" id="v-progress" hidden></section>
+  <section class="view" id="v-teacher" hidden></section>
+</main>
+
+<script>
+/* ================= البيانات ================= */
+const SKILLS={
+  int:{name:'الأعداد الصحيحة',sym:'±'},
+  ord:{name:'ترتيب العمليات',sym:'( )'},
+  exp:{name:'الأسس',sym:'x²'},
+  frac:{name:'الكسور',sym:'½'},
+  eq:{name:'المعادلات',sym:'x ='},
+  dist:{name:'خاصية التوزيع',sym:'a(b+c)'}
+};
+const LV={1:'سهل',2:'متوسط',3:'صعب'};
+const REASONS={
+  sign:'خطأ في الإشارة',
+  order:'خطأ في ترتيب العمليات',
+  exponent:'فهم خاطئ للأسس',
+  fraction:'جمع البسوط والمقامات مباشرة',
+  inverse:'استخدام العملية العكسية الخاطئة',
+  balance:'لم تُطبَّق العملية نفسها على طرفي المعادلة',
+  distribute:'توزيع الضرب على حدّ واحد فقط',
+  arithmetic:'خطأ حسابي أو في التبسيط'
+};
+const TIPS={
+  sign:'قواعد الإشارات: سالب × سالب = موجب، وطرح العدد السالب يساوي جمع معكوسه.',
+  order:'ترتيب العمليات: الأقواس ← الأسس ← الضرب والقسمة ← الجمع والطرح (بالترتيب من اليسار).',
+  exponent:'الأس يعني ضرب الأساس في نفسه بعدد مرات الأس، وليس ضرب الأساس في الأس.',
+  fraction:'لا نجمع المقامات! نوحّد المقامات أولًا ثم نجمع البسوط.',
+  inverse:'نستخدم العملية العكسية: الضرب عكسه القسمة، والجمع عكسه الطرح.',
+  balance:'المعادلة ميزان: ما نفعله في طرف نفعله في الطرف الآخر تمامًا.',
+  distribute:'العدد خارج القوس يُضرب في كل حدّ داخله.',
+  arithmetic:'راجعي الحساب والتبسيط خطوة بخطوة قبل الانتقال لما بعدها.'
+};
+const REASON_SKILL={sign:'int',order:'ord',exponent:'exp',fraction:'frac',inverse:'eq',balance:'eq',distribute:'dist',arithmetic:'frac'};
+
+/* wrong: رقم الخطوة الخاطئة (يبدأ من 0)، و -1 يعني أن الحل صحيح بالكامل */
+const BASE=[
+ {id:'p1',skill:'int',level:1,q:'احسبي:',expr:'−7 + 3',
+  steps:[{m:'|−7| = 7 , |3| = 3',n:'نوجد القيمة المطلقة لكل عدد'},{m:'7 − 3 = 4',n:'الإشارتان مختلفتان فنطرح'},{m:'−7 + 3 = +4',n:'نأخذ إشارة العدد 3'}],
+  wrong:2,reason:'sign',answer:'-4',
+  fix:[{m:'7 − 3 = 4',n:'نطرح القيمتين المطلقتين'},{m:'−7 + 3 = −4',n:'نأخذ إشارة `−7` لأن قيمته المطلقة أكبر'}],
+  explain:'عند جمع عددين مختلفين في الإشارة نأخذ إشارة العدد ذي القيمة المطلقة الأكبر.'},
+ {id:'p2',skill:'int',level:1,q:'احسبي:',expr:'(−6) × (−4)',
+  steps:[{m:'6 × 4 = 24',n:'نضرب الأعداد دون إشارات'},{m:'(−) × (−) = (−)',n:'نحدد إشارة الناتج'},{m:'(−6) × (−4) = −24'}],
+  wrong:1,reason:'sign',answer:'24',
+  fix:[{m:'6 × 4 = 24'},{m:'(−) × (−) = (+)',n:'سالب × سالب = موجب'},{m:'(−6) × (−4) = 24'}],
+  explain:'حاصل ضرب عددين سالبين يكون موجبًا دائمًا.'},
+ {id:'p3',skill:'int',level:2,q:'احسبي:',expr:'5 − (−8)',
+  steps:[{m:'5 − (−8) = 5 − 8',n:'نفكّ القوس'},{m:'= −3'}],
+  wrong:0,reason:'sign',answer:'13',
+  fix:[{m:'5 − (−8) = 5 + 8',n:'طرح العدد السالب = جمع معكوسه'},{m:'= 13'}],
+  explain:'سالب في سالب يصبح موجبًا، فطرح −8 يساوي جمع 8.'},
+ {id:'p4',skill:'ord',level:1,q:'احسبي:',expr:'6 + 4 × 3',
+  steps:[{m:'6 + 4 = 10',n:'نبدأ من اليسار'},{m:'10 × 3 = 30'}],
+  wrong:0,reason:'order',answer:'18',
+  fix:[{m:'4 × 3 = 12',n:'الضرب قبل الجمع'},{m:'6 + 12 = 18'}],
+  explain:'الضرب يسبق الجمع دائمًا مهما كان موقعه في التعبير.'},
+ {id:'p5',skill:'ord',level:2,q:'احسبي:',expr:'20 − 12 ÷ 4 + 1',
+  steps:[{m:'12 ÷ 4 = 3',n:'القسمة أولًا'},{m:'20 − 3 + 1',n:'نعوّض الناتج'},{m:'20 − 4 = 16',n:'نجمع 3 + 1 أولًا ثم نطرح'}],
+  wrong:2,reason:'order',answer:'18',
+  fix:[{m:'12 ÷ 4 = 3'},{m:'20 − 3 = 17',n:'الجمع والطرح بالترتيب من اليسار'},{m:'17 + 1 = 18'}],
+  explain:'الجمع والطرح في المستوى نفسه، فننفذهما بالترتيب كما يظهران من اليسار.'},
+ {id:'p6',skill:'ord',level:2,q:'احسبي:',expr:'3 + 2 × (8 − 5)',
+  steps:[{m:'8 − 5 = 3',n:'الأقواس أولًا'},{m:'2 × 3 = 6',n:'ثم الضرب'},{m:'3 + 6 = 9',n:'ثم الجمع'}],
+  wrong:-1,reason:'order',answer:'9',fix:[],
+  explain:'الحل صحيح! اتّبعت الطالبة الترتيب: الأقواس ثم الضرب ثم الجمع.'},
+ {id:'p7',skill:'exp',level:1,q:'احسبي:',expr:'2³ + 4',
+  steps:[{m:'2³ = 2 × 3 = 6',n:'نحسب الأس'},{m:'6 + 4 = 10'}],
+  wrong:0,reason:'exponent',answer:'12',
+  fix:[{m:'2³ = 2 × 2 × 2 = 8',n:'الأس يعني تكرار الضرب'},{m:'8 + 4 = 12'}],
+  explain:'2³ تعني ضرب 2 في نفسه ثلاث مرات، وليس 2 × 3.'},
+ {id:'p8',skill:'exp',level:2,q:'احسبي:',expr:'(−3)² − 5',
+  steps:[{m:'(−3)² = −9',n:'نربّع العدد'},{m:'−9 − 5 = −14'}],
+  wrong:0,reason:'sign',answer:'4',
+  fix:[{m:'(−3)² = (−3) × (−3) = 9',n:'سالب × سالب = موجب'},{m:'9 − 5 = 4'}],
+  explain:'عندما يكون العدد السالب داخل القوس فإن تربيعه موجب.'},
+ {id:'p9',skill:'exp',level:3,q:'احسبي:',expr:'2 × 3²',
+  steps:[{m:'2 × 3 = 6',n:'نضرب أولًا'},{m:'6² = 36'}],
+  wrong:0,reason:'order',answer:'18',
+  fix:[{m:'3² = 9',n:'الأسس قبل الضرب'},{m:'2 × 9 = 18'}],
+  explain:'الأس يخصّ العدد 3 وحده، والأسس تُحسب قبل الضرب.'},
+ {id:'p10',skill:'frac',level:1,q:'احسبي:',expr:'1/2 + 1/3',
+  steps:[{m:'1/2 + 1/3 = (1+1)/(2+3)',n:'نجمع البسطين والمقامين'},{m:'= 2/5'}],
+  wrong:0,reason:'fraction',answer:'5/6',
+  fix:[{m:'1/2 + 1/3 = 3/6 + 2/6',n:'نوحّد المقامات'},{m:'= 5/6'}],
+  explain:'عند جمع الكسور نوحّد المقامات أولًا ثم نجمع البسوط فقط.'},
+ {id:'p11',skill:'frac',level:2,q:'احسبي:',expr:'2/3 × 3/4',
+  steps:[{m:'= (2×3)/(3×4)',n:'نضرب البسط في البسط والمقام في المقام'},{m:'= 6/12'},{m:'= 1/2',n:'نبسّط'}],
+  wrong:-1,reason:'fraction',answer:'1/2',fix:[],
+  explain:'الحل صحيح! في ضرب الكسور نضرب البسوط معًا والمقامات معًا ثم نبسّط.'},
+ {id:'p12',skill:'frac',level:3,q:'احسبي:',expr:'3/4 ÷ 1/2',
+  steps:[{m:'3/4 ÷ 1/2 = 3/4 × 2/1',n:'نضرب في مقلوب الكسر الثاني'},{m:'= 6/4'},{m:'= 2/3',n:'نبسّط'}],
+  wrong:2,reason:'arithmetic',answer:'3/2',
+  fix:[{m:'3/4 × 2/1 = 6/4'},{m:'= 3/2',n:'نقسم البسط والمقام على 2'}],
+  explain:'التبسيط يكون بقسمة البسط والمقام على العدد نفسه، لا بقلب الكسر.'},
+ {id:'p13',skill:'eq',level:1,q:'حلّي المعادلة:',expr:'x + 7 = 12',
+  steps:[{m:'x + 7 − 7 = 12 + 7',n:'نتخلص من 7'},{m:'x = 19'}],
+  wrong:0,reason:'balance',answer:'5',
+  fix:[{m:'x + 7 − 7 = 12 − 7',n:'نطرح 7 من الطرفين'},{m:'x = 5'}],
+  explain:'ما نطرحه من طرف نطرحه من الطرف الآخر أيضًا.'},
+ {id:'p14',skill:'eq',level:1,q:'حلّي المعادلة:',expr:'4x = 28',
+  steps:[{m:'x = 28 − 4',n:'ننقل 4 للطرف الآخر'},{m:'x = 24'}],
+  wrong:0,reason:'inverse',answer:'7',
+  fix:[{m:'4x ÷ 4 = 28 ÷ 4',n:'العدد 4 مضروب في x، فنقسم'},{m:'x = 7'}],
+  explain:'4x تعني 4 × x، وعكس الضرب هو القسمة لا الطرح.'},
+ {id:'p15',skill:'eq',level:2,q:'حلّي المعادلة:',expr:'x/3 = 6',
+  steps:[{m:'x/3 × 3 = 6 × 3',n:'نضرب الطرفين في 3'},{m:'x = 18'}],
+  wrong:-1,reason:'inverse',answer:'18',fix:[],
+  explain:'الحل صحيح! عكس القسمة على 3 هو الضرب في 3 للطرفين.'},
+ {id:'p16',skill:'eq',level:2,q:'حلّي المعادلة:',expr:'x − 9 = −4',
+  steps:[{m:'x − 9 + 9 = −4 + 9',n:'نضيف 9 للطرفين'},{m:'x = −13'}],
+  wrong:1,reason:'sign',answer:'5',
+  fix:[{m:'x − 9 + 9 = −4 + 9'},{m:'x = 5',n:'لأن `−4 + 9 = 5`'}],
+  explain:'عند جمع −4 و 9 نطرح ونأخذ إشارة الأكبر قيمةً مطلقة (9) فالناتج موجب.'},
+ {id:'p17',skill:'eq',level:3,q:'حلّي المعادلة:',expr:'2x + 5 = 17',
+  steps:[{m:'2x + 5 − 5 = 17 − 5',n:'نطرح 5 من الطرفين'},{m:'2x = 12'},{m:'x = 12 − 2 = 10',n:'نتخلص من 2'}],
+  wrong:2,reason:'inverse',answer:'6',
+  fix:[{m:'2x = 12'},{m:'x = 12 ÷ 2 = 6',n:'نقسم الطرفين على 2'}],
+  explain:'2x تعني 2 × x، لذلك نقسم على 2 ولا نطرح.'},
+ {id:'p18',skill:'dist',level:2,q:'احسبي باستخدام خاصية التوزيع:',expr:'3(5 + 4)',
+  steps:[{m:'3(5 + 4) = 3 × 5 + 4',n:'نوزّع الضرب'},{m:'= 15 + 4 = 19'}],
+  wrong:0,reason:'distribute',answer:'27',
+  fix:[{m:'3(5 + 4) = 3 × 5 + 3 × 4',n:'نضرب 3 في كل حدّ'},{m:'= 15 + 12 = 27'}],
+  explain:'العدد خارج القوس يُضرب في جميع الحدود داخل القوس.'},
+ {id:'p19',skill:'dist',level:3,q:'حلّي المعادلة:',expr:'−2(x − 3) = 10',
+  steps:[{m:'−2x − 6 = 10',n:'نوزّع −2 على القوس'},{m:'−2x = 16'},{m:'x = −8'}],
+  wrong:0,reason:'sign',answer:'-2',
+  fix:[{m:'−2x + 6 = 10',n:'لأن `(−2) × (−3) = +6`'},{m:'−2x = 4'},{m:'x = −2'}],
+  explain:'عند توزيع عدد سالب ننتبه لإشارة كل حد: سالب × سالب = موجب.'},
+ {id:'p20',skill:'int',level:3,q:'احسبي:',expr:'−12 ÷ 3 + (−2) × (−5)',
+  steps:[{m:'−12 ÷ 3 = −4',n:'القسمة'},{m:'(−2) × (−5) = 10',n:'الضرب'},{m:'−4 + 10 = 6',n:'الجمع'}],
+  wrong:-1,reason:'sign',answer:'6',fix:[],
+  explain:'الحل صحيح! الترتيب والإشارات سليمة في كل خطوة.'}
+];
+
+/* مسائل الأسبوع الثابتة: الصقي هنا ما تصدّرينه من لوحة المعلمة لتظهر لكل الطالبات */
+const WEEKLY=[];
+
+/* ================= التخزين ================= */
+const KEY='wain-ghalatt-v1';
+function fresh(){return {students:{},cur:null,custom:[],prob:{},pin:'1234'}}
+let DB=(()=>{try{return Object.assign(fresh(),JSON.parse(localStorage.getItem(KEY))||{})}catch(e){return fresh()}})();
+function save(){try{localStorage.setItem(KEY,JSON.stringify(DB))}catch(e){}}
+function me(){return DB.cur&&DB.students[DB.cur]?DB.students[DB.cur]:null}
+function allProblems(){return BASE.concat(WEEKLY.map(p=>({...p,week:true})),DB.custom.map(p=>({...p,week:true})))}
+let teacherOK=false;
+
+/* ================= أدوات ================= */
+const ICON=document.querySelector('link[rel=apple-touch-icon]').href;
+const $=s=>document.querySelector(s);
+const ar=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+const strip=x=>x[0]==='('&&x[x.length-1]===')'?x.slice(1,-1):x;
+function fm(s){
+  let h=esc(String(s).replace(/-/g,'−'));
+  h=h.replace(/(\([^()]+\)|[0-9a-zA-Z]+)\/(\([^()]+\)|[0-9a-zA-Z]+)/g,(m,a,b)=>`<span class="fr"><span>${strip(a)}</span><span>${strip(b)}</span></span>`);
+  return `<span class="m" dir="ltr">${h}</span>`;
+}
+function rich(s){return String(s).split('`').map((t,i)=>i%2?fm(t):esc(t)).join('')}
+function num(s){
+  s=String(s).trim().replace(/[٠-٩]/g,d=>'٠١٢٣٤٥٦٧٨٩'.indexOf(d)).replace(/[−–—]/g,'-').replace(/[٫,]/g,'.').replace(/\s/g,'').replace(/^(x|y|س|ص)=/i,'');
+  if(/^-?\d+(\.\d+)?\/-?\d+(\.\d+)?$/.test(s)){const[a,b]=s.split('/').map(Number);return b?a/b:NaN}
+  return s===''?NaN:Number(s);
+}
+const RING='<svg class="mark" viewBox="0 0 100 50" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M10 30 C 6 12, 58 2, 88 13 C 101 21, 92 45, 50 46 C 17 47, 3 37, 14 18"/></svg>';
+function newStudent(){return {points:0,stats:{},miss:{},best:0,bestPct:0,runs:0}}
+function mastery(st){if(!st)return null;const n=st.sN+st.rN+st.fN;return n?Math.round((st.s+st.r+st.f)/n*100):null}
+function rank(p){return p<100?'مصححة مبتدئة 🌱':p<300?'مصححة ماهرة ✏️':'خبيرة التصحيح 🏅'}
+function levelTag(v){if(v===null)return '<span class="tag t-none">لم تبدئي بعد</span>';if(v>=80)return '<span class="tag t-good">متقنة</span>';if(v>=50)return '<span class="tag t-mid">في الطريق</span>';return '<span class="tag t-low">تحتاج تدريبًا</span>'}
+function barColor(v){return v===null?'#D9D5CB':v>=80?'var(--green)':v>=50?'#E0A800':'var(--red)'}
+function floatPts(g){const d=document.createElement('div');d.className='float';d.textContent='+'+ar(g)+' نقطة';document.body.appendChild(d);setTimeout(()=>d.remove(),1150)}
+
+/* ================= التنقل ================= */
+let current='home';
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>show(t.dataset.v));
+function show(v){
+  current=v;
+  document.querySelectorAll('.view').forEach(x=>x.hidden=x.id!=='v-'+v);
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.dataset.v===v));
+  ({home:renderHome,practice:renderPractice,challenge:renderChallenge,progress:renderProgress,teacher:renderTeacher})[v]();
+  renderWho();window.scrollTo(0,0);
+}
+function renderWho(){
+  const s=me();
+  $('#who').innerHTML=s?`<span class="pts" id="hpts">${ar(s.points)} نقطة</span><button class="namebtn" onclick="switchName()" title="تبديل الطالبة">${esc(DB.cur)}</button>`:'';
+}
+function switchName(){DB.cur=null;save();show('home')}
+function needName(host){
+  if(me())return false;
+  host.innerHTML=`<div class="card namebox"><h2>اكتبي اسمك أولًا ✏️</h2><p class="muted small">لنحفظ نقاطك وخريطة تقدمك.</p><button class="btn" onclick="show('home')">إلى الصفحة الرئيسية</button></div>`;
+  return true;
+}
+
+/* ================= الرئيسية ================= */
+function renderHome(){
+  const s=me();
+  const names=Object.keys(DB.students);
+  const feats=[
+    ['🔎','اكتشفي الخطأ','تظهر مسألة مع خطوات حلها، وتحددين الخطوة التي حدث فيها الخطأ.','practice'],
+    ['💭','لماذا أخطأت؟','تختارين سبب الخطأ: إشارة؟ ترتيب عمليات؟ أسس؟','practice'],
+    ['✏️','أصلحي الحل','تعيدين الحل صحيحًا وتشاهدين تفسيرًا مبسطًا للخطوات.','practice'],
+    ['🏆','تحدي الدقة','مسائل متدرجة الصعوبة، تجمعين فيها النقاط مقابل كل اكتشاف وتصحيح.','challenge'],
+    ['📊','خريطة تقدمي','المهارات التي أتقنتِها، والموضوعات التي تحتاج مزيدًا من التدريب.','progress']
+  ];
+  $('#v-home').innerHTML=`
+  <div class="hero">
+    <img class="appicon" src="${ICON}" alt="شعار وين غلطت؟">
+    <div class="logo">وين <span class="ring">غلطت<svg viewBox="0 0 100 50" preserveAspectRatio="none" aria-hidden="true"><path d="M10 30 C 6 12, 58 2, 88 13 C 101 21, 92 45, 50 46 C 17 47, 3 37, 14 18"/></svg></span>؟</div>
+    <p class="lead">منصة لاكتشاف الأخطاء الرياضية وفهمها. هنا أنتِ <b>المصححة الرياضية</b>: تفحصين حلول الآخرين، تكتشفين الخطأ، تفهمين سببه، ثم تصلحينه.</p>
+  </div>
+  ${s?`
+  <div class="card" style="margin-top:18px">
+    <div class="row" style="justify-content:space-between">
+      <div><h2>أهلًا يا ${esc(DB.cur)} 👋</h2><div class="muted small">${rank(s.points)} · ${ar(s.points)} نقطة</div></div>
+      <div class="row"><button class="btn" onclick="show('practice')">ابدئي التصحيح</button><button class="btn ghost" onclick="show('challenge')">تحدي الدقة</button></div>
+    </div>
+  </div>`:`
+  <div class="card namebox">
+    <h2>من المصححة اليوم؟</h2>
+    <div class="row"><input class="field" id="nm" placeholder="اكتبي اسمك" maxlength="30" style="max-width:240px"><button class="btn" id="go">ابدئي</button></div>
+    ${names.length?`<div class="row" style="margin-top:12px">${names.map(n=>`<button class="pickname" data-n="${esc(n)}">${esc(n)}</button>`).join('')}</div>`:''}
+  </div>`}
+  <div class="sec-title"><h2>أقسام المبادرة</h2></div>
+  <div class="grid">${feats.map(f=>`<button class="feat" data-go="${f[3]}"><div class="ic">${f[0]}</div><h3>${f[1]}</h3><p>${f[2]}</p></button>`).join('')}</div>
+  <div class="slogan">«<b>الخطأ</b> فرصة للفهم، والتصحيح طريق للإتقان»</div>`;
+  document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>show(b.dataset.go));
+  document.querySelectorAll('[data-n]').forEach(b=>b.onclick=()=>{DB.cur=b.dataset.n;save();show('home')});
+  const go=$('#go');
+  if(go){
+    const start=()=>{const n=$('#nm').value.trim();if(!n){$('#nm').focus();return}
+      if(!DB.students[n])DB.students[n]=newStudent();DB.cur=n;save();show('home')};
+    go.onclick=start;$('#nm').onkeydown=e=>{if(e.key==='Enter')start()};
+  }
+}
+
+/* ================= مسار التصحيح ================= */
+function renderPractice(){
+  const host=$('#v-practice');if(needName(host))return;
+  const s=me(),all=allProblems();
+  const week=all.filter(p=>p.week);
+  host.innerHTML=`
+  <h1 style="font-size:1.4rem">مسار التصحيح ✏️</h1>
+  <p class="muted" style="margin:4px 0 16px">لكل مسألة ثلاث مراحل: اكتشفي الخطأ ← لماذا أخطأت؟ ← أصلحي الحل. اختاري المهارة:</p>
+  <div class="grid">
+    ${week.length?`<button class="skill week" data-sk="week"><span class="sym">★</span><span><b>مسائل الأسبوع</b><span class="small">${ar(week.length)} مسائل جديدة من المعلمة</span></span></button>`:''}
+    <button class="skill" data-sk="mix"><span class="sym">∑</span><span><b>مزيج من كل المهارات</b><span class="small">٨ مسائل متدرجة</span></span></button>
+    ${Object.entries(SKILLS).map(([k,v])=>{const n=all.filter(p=>p.skill===k).length;const m=mastery(s.stats[k]);
+      return `<button class="skill" data-sk="${k}"><span class="sym">${v.sym}</span><span><b>${v.name}</b><span class="small">${ar(n)} مسائل · ${m===null?'لم تبدئي':'الإتقان '+ar(m)+'٪'}</span></span></button>`}).join('')}
+  </div>`;
+  host.querySelectorAll('[data-sk]').forEach(b=>b.onclick=()=>startPractice(b.dataset.sk));
+}
+function startPractice(sk){
+  const all=allProblems();let list;
+  if(sk==='mix')list=shuffle(all).slice(0,8);
+  else if(sk==='week')list=all.filter(p=>p.week);
+  else list=all.filter(p=>p.skill===sk);
+  list=list.slice().sort((a,b)=>a.level-b.level);
+  if(!list.length)return;
+  startRun(list,'pr',$('#v-practice'));
+}
+
+/* ================= تحدي الدقة ================= */
+function renderChallenge(){
+  const host=$('#v-challenge');if(needName(host))return;
+  const s=me();
+  host.innerHTML=`
+  <div class="card summary">
+    <div style="font-size:2.4rem">🏆</div>
+    <h1 style="font-size:1.5rem">تحدي الدقة</h1>
+    <p class="muted" style="max-width:460px;margin:8px auto">٦ مسائل تزداد صعوبة: مسألتان سهلتان، ثم متوسطتان، ثم صعبتان. بعض الحلول فيها خطأ متعمّد، وبعضها صحيح تمامًا — فانتبهي!</p>
+    <div class="stats" style="max-width:520px;margin:16px auto;text-align:right">
+      <div class="stat"><b>+١٠</b><span>اكتشاف الخطوة الخاطئة</span></div>
+      <div class="stat"><b>+٥</b><span>تحديد سبب الخطأ</span></div>
+      <div class="stat"><b>+١٠</b><span>تصحيح الناتج</span></div>
+    </div>
+    ${s.best?`<p class="small muted">أفضل نتيجة لك: <b>${ar(s.best)}</b> نقطة (${ar(s.bestPct)}٪)</p>`:''}
+    <button class="btn" id="startCh">ابدئي التحدي</button>
+  </div>`;
+  $('#startCh').onclick=()=>{
+    const all=allProblems();let list=[];
+    [1,2,3].forEach(l=>list.push(...shuffle(all.filter(p=>p.level===l)).slice(0,2)));
+    if(list.length<6)list=list.concat(shuffle(all.filter(p=>!list.includes(p))).slice(0,6-list.length));
+    startRun(list.sort((a,b)=>a.level-b.level),'ch',host);
+  };
+}
+
+/* ================= محرك المسألة ================= */
+let run=null;
+function startRun(list,mode,host){run={list,i:0,mode,host,score:0,max:0,perfect:0};renderProblem()}
+function P(){return run.list[run.i]}
+function renderProblem(){
+  const p=P(),isOK=p.wrong<0;
+  run.s={phase:1,stepTries:0,rTries:0,fTries:0,stepFirst:false,rFirst:false,fFirst:false,hint:false};
+  run.max+=isOK?15:25;
+  run.host.innerHTML=`
+  <div class="runhead">
+    <button class="btn ghost sm" onclick="show('${run.mode==='ch'?'challenge':'practice'}')">→ رجوع</button>
+    <span class="chip">${SKILLS[p.skill].name}</span>${p.week?'<span class="chip week">مسألة الأسبوع</span>':''}
+    <span class="lvl">${'●'.repeat(p.level)}${'○'.repeat(3-p.level)} ${LV[p.level]}</span>
+    <span class="count">مسألة ${ar(run.i+1)} من ${ar(run.list.length)}${run.mode==='ch'?` · <b>${ar(run.score)}</b> نقطة`:''}</span>
+  </div>
+  <div class="phases">${['اكتشفي الخطأ','لماذا أخطأت؟','أصلحي الحل'].map((t,i)=>`<div class="ph" data-ph="${i+1}">${ar(i+1)}. ${t}</div>`).join('')}</div>
+  <div class="qcard"><div class="qtext">${esc(p.q)}</div><div class="expr">${fm(p.expr)}</div></div>
+  <div class="sheet pick" id="sheet">
+    <div class="sheet-h">حلّ إحدى الطالبات — افحصيه خطوة خطوة:</div>
+    ${p.steps.map((s,i)=>`<button class="step" data-i="${i}"><span class="num">${ar(i+1)}</span><span class="body">${fm(s.m)}${s.n?`<span class="note">${rich(s.n)}</span>`:''}</span></button>`).join('')}
+  </div>
+  <div class="stage" id="stage"></div>`;
+  run.host.querySelectorAll('.step').forEach(b=>b.onclick=()=>pickStep(+b.dataset.i));
+  phase1();
+}
+function setPh(n){document.querySelectorAll('.ph').forEach(e=>{const k=+e.dataset.ph;e.className='ph'+(k<n?' done':k===n?' on':'')})}
+function stepEl(i){return run.host.querySelector(`.step[data-i="${i}"]`)}
+function award(g){run.score+=g;const s=me();s.points+=g;save();floatPts(g);const h=$('#hpts');if(h)h.textContent=ar(s.points)+' نقطة'}
+
+function phase1(){
+  setPh(1);
+  $('#stage').innerHTML=`<h3>🔎 أين الخطأ؟</h3>
+  <p class="muted small" style="margin:-4px 0 12px">اضغطي على الخطوة التي حدث فيها الخطأ، أو اختاري «الحل صحيح» إن لم تجدي خطأ.</p>
+  <button class="btn ghost" id="okBtn">✓ الحل صحيح بالكامل</button>
+  <div class="fb" id="fb"></div><div id="nx"></div>`;
+  $('#okBtn').onclick=()=>pickStep(-1);
+}
+function pickStep(i){
+  const S=run.s,p=P(),isOK=p.wrong<0;
+  if(S.phase!==1)return;
+  S.stepTries++;
+  const fb=$('#fb');
+  if(i===p.wrong){
+    S.stepFirst=S.stepTries===1;
+    award(isOK?(S.stepFirst?15:7):(S.stepFirst?10:5));
+    if(isOK){finishOK(true);return}
+    markError();
+    fb.className='fb good';fb.innerHTML=`أحسنتِ يا مصححة! 🎯 الخطأ في الخطوة ${ar(p.wrong+1)}.`;
+    nextBtn('لماذا حدث الخطأ؟ ←',phase2);
+    return;
+  }
+  if(i>=0){const el=stepEl(i);el.classList.remove('shake');void el.offsetWidth;el.classList.add('shake')}
+  fb.className='fb bad';
+  fb.innerHTML=i===-1?'يوجد خطأ في إحدى الخطوات… افحصيها بدقة 👀':isOK?'هذه الخطوة صحيحة! تحققي مرة أخرى 👀':'هذه الخطوة صحيحة، الخطأ في مكان آخر.';
+  if(S.stepTries>=2){
+    if(isOK){finishOK(false);return}
+    markError();
+    fb.className='fb info';fb.innerHTML=`لا بأس، الخطأ كان في الخطوة ${ar(p.wrong+1)} (محاطة بالأحمر). لنفهم سببه.`;
+    nextBtn('لماذا حدث الخطأ؟ ←',phase2);
+  }
+}
+function markError(){
+  const p=P();run.s.phase=1.5;$('#sheet').classList.remove('pick');
+  const el=stepEl(p.wrong);el.classList.add('bad');el.insertAdjacentHTML('beforeend',RING);
+  p.steps.forEach((_,j)=>{if(j>p.wrong)stepEl(j).classList.add('faded')});
+  const ok=$('#okBtn');if(ok)ok.disabled=true;
+}
+function nextBtn(label,fn){$('#nx').innerHTML=`<button class="btn next">${label}</button>`;$('#nx button').onclick=fn}
+
+function finishOK(found){
+  const p=P();run.s.phase=4;$('#sheet').classList.remove('pick');
+  run.host.querySelectorAll('.step').forEach(e=>e.classList.add('good'));
+  setPh(4);
+  $('#stage').innerHTML=`<div class="fb ${found?'good':'info'}" style="margin-top:0">${found?'ممتاز! 👏 لاحظتِ أن الحل صحيح، والتحقق مهارة مهمة مثل اكتشاف الخطأ.':'هذا الحل كان صحيحًا بالكامل ✓ — أحيانًا يكون التحقق هو المطلوب.'}</div>
+  <div class="fixcard"><b>لماذا الحل صحيح؟</b><p style="margin:4px 0 0">${rich(p.explain)}</p></div>
+  <div id="nx"></div>`;
+  record();endBtn();
+}
+
+function phase2(){
+  const p=P(),S=run.s;S.phase=2;setPh(2);
+  const opts=shuffle([p.reason,...shuffle(Object.keys(REASONS).filter(r=>r!==p.reason)).slice(0,3)]);
+  $('#stage').innerHTML=`<h3>💭 لماذا حدث الخطأ في الخطوة ${ar(p.wrong+1)}؟</h3>
+  <div class="opts">${opts.map(r=>`<button class="opt" data-r="${r}">${REASONS[r]}</button>`).join('')}</div>
+  <div class="fb" id="fb"></div><div id="nx"></div>`;
+  $('#stage').querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+    if(S.phase!==2)return;S.rTries++;
+    const fb=$('#fb');
+    if(b.dataset.r===p.reason){
+      S.rFirst=S.rTries===1;award(S.rFirst?5:2);b.classList.add('right');
+      done2(fb,'صحيح! ✔️');
+    }else{
+      b.classList.add('wrong');b.disabled=true;
+      if(S.rTries>=2){$(`.opt[data-r="${p.reason}"]`).classList.add('right');done2(fb,'السبب الصحيح موضّح بالأخضر.')}
+      else{fb.className='fb bad';fb.textContent='ليس هذا هو السبب، جرّبي مرة أخرى.'}
+    }
+  });
+}
+function done2(fb,head){
+  const p=P();run.s.phase=2.5;
+  $('#stage').querySelectorAll('.opt').forEach(o=>o.disabled=true);
+  fb.className='fb good';fb.innerHTML=`${head} <span style="font-weight:400">${esc(TIPS[p.reason])}</span>`;
+  nextBtn('أصلحي الحل ←',phase3);
+}
+
+function phase3(){
+  const p=P(),S=run.s;S.phase=3;setPh(3);
+  $('#stage').innerHTML=`<h3>✏️ أصلحي الحل</h3>
+  <p class="muted small" style="margin:-4px 0 12px">أعيدي حل المسألة بطريقة صحيحة في دفترك، ثم اكتبي الناتج النهائي هنا (يمكنك كتابة الكسر هكذا: 3/4).</p>
+  <div class="row"><input class="ans" id="ans" inputmode="text" autocomplete="off" placeholder="الناتج"><button class="btn" id="chk">تحقّقي</button>
+  ${p.fix.length?'<button class="btn ghost sm" id="hint">💡 تلميح</button>':''}</div>
+  <div class="fb" id="fb"></div><div id="nx"></div>`;
+  const inp=$('#ans');inp.focus();
+  const check=()=>{
+    if(S.phase!==3)return;
+    const v=num(inp.value),fb=$('#fb');
+    if(isNaN(v)){fb.className='fb bad';fb.textContent='اكتبي عددًا أو كسرًا مثل 5 أو −4 أو 3/2.';return}
+    S.fTries++;
+    if(Math.abs(v-num(p.answer))<1e-6){S.fFirst=S.fTries===1&&!S.hint;award(S.fFirst?10:5);done3(true)}
+    else if(S.fTries>=2)done3(false);
+    else{fb.className='fb bad';fb.textContent='الناتج غير صحيح، راجعي حلّك وجرّبي مرة أخرى.';inp.select()}
+  };
+  $('#chk').onclick=check;inp.onkeydown=e=>{if(e.key==='Enter')check()};
+  const h=$('#hint');if(h)h.onclick=()=>{S.hint=true;h.disabled=true;const fb=$('#fb');fb.className='fb info';fb.innerHTML='ابدئي هكذا: '+fm(p.fix[0].m)+(p.fix[0].n?' — '+rich(p.fix[0].n):'')};
+}
+function done3(ok){
+  const p=P();run.s.phase=4;setPh(4);
+  $('#chk').disabled=true;$('#ans').disabled=true;const h=$('#hint');if(h)h.disabled=true;
+  const fb=$('#fb');fb.className='fb '+(ok?'good':'info');
+  fb.innerHTML=ok?'رائع! 🌟 أصلحتِ الحل بنجاح.':'الناتج الصحيح هو '+fm(p.answer)+' — راجعي الخطوات بالأسفل.';
+  $('#nx').insertAdjacentHTML('beforebegin',`<div class="fixcard"><b>الحل الصحيح</b><ol>${p.fix.map(f=>`<li>${fm(f.m)}${f.n?`<span class="note">${rich(f.n)}</span>`:''}</li>`).join('')}</ol><div>💡 ${rich(p.explain)}</div></div>`);
+  record();endBtn();
+}
+
+function record(){
+  const p=P(),S=run.s,s=me(),isOK=p.wrong<0;
+  const st=s.stats[p.skill]||(s.stats[p.skill]={sN:0,s:0,rN:0,r:0,fN:0,f:0});
+  st.sN++;if(S.stepFirst)st.s++;
+  let perfect=S.stepFirst;
+  if(!isOK){st.rN++;st.fN++;if(S.rFirst)st.r++;if(S.fFirst)st.f++;perfect=S.stepFirst&&S.rFirst&&S.fFirst;if(!perfect)s.miss[p.reason]=(s.miss[p.reason]||0)+1}
+  if(perfect)run.perfect++;
+  const pr=DB.prob[p.id]||(DB.prob[p.id]={n:0,fail:0});pr.n++;if(!perfect)pr.fail++;
+  save();
+}
+function endBtn(){
+  const last=run.i>=run.list.length-1;
+  nextBtn(last?'عرض النتيجة 🏁':'المسألة التالية ←',()=>{run.i++;if(run.i<run.list.length){renderProblem();window.scrollTo(0,0)}else summary()});
+}
+function summary(){
+  const s=me(),pct=run.max?Math.round(run.score/run.max*100):0;
+  s.runs++;
+  if(run.mode==='ch'&&run.score>s.best){s.best=run.score;s.bestPct=pct}
+  save();
+  const msg=pct>=85?'دقة عالية! أنتِ مصححة محترفة 🏅':pct>=60?'أداء جميل، وكل خطأ اكتشفتِه خطوة نحو الإتقان ✨':'بداية جيدة! راجعي خريطة تقدمك لتعرفي أين تتدربين 💪';
+  run.host.innerHTML=`<div class="card summary">
+    <div class="muted">${run.mode==='ch'?'نتيجة تحدي الدقة':'انتهى المسار'}</div>
+    <div class="bigscore">${ar(run.score)}<span class="muted" style="font-size:1.2rem"> / ${ar(run.max)}</span></div>
+    <div class="stats" style="max-width:420px;margin:12px auto;text-align:right">
+      <div class="stat"><b>${ar(pct)}٪</b><span>نسبة الدقة</span></div>
+      <div class="stat"><b>${ar(run.perfect)} / ${ar(run.list.length)}</b><span>مسائل بلا أي تعثّر</span></div>
+    </div>
+    <p style="font-weight:600">${msg}</p>
+    <div class="slogan" style="margin-top:12px">«<b>الخطأ</b> فرصة للفهم، والتصحيح طريق للإتقان»</div>
+    <div class="row" style="justify-content:center;margin-top:18px">
+      <button class="btn" onclick="show('${run.mode==='ch'?'challenge':'practice'}')">${run.mode==='ch'?'تحدٍّ جديد':'مسار آخر'}</button>
+      <button class="btn ghost" onclick="show('progress')">خريطة تقدمي 📊</button>
+    </div></div>`;
+  window.scrollTo(0,0);
+}
+
+/* ================= خريطة تقدمي ================= */
+function renderProgress(){
+  const host=$('#v-progress');if(needName(host))return;
+  const s=me();
+  const tot={sN:0,s:0,rN:0,r:0,fN:0,f:0};Object.values(s.stats).forEach(st=>Object.keys(tot).forEach(k=>tot[k]+=st[k]));
+  const overall=mastery(tot);
+  const mastered=Object.keys(SKILLS).filter(k=>{const m=mastery(s.stats[k]);return m!==null&&m>=80&&s.stats[k].sN>=2});
+  const misses=Object.entries(s.miss).sort((a,b)=>b[1]-a[1]).slice(0,3);
+  host.innerHTML=`
+  <h1 style="font-size:1.4rem">خريطة تقدمي 📊</h1>
+  <p class="muted" style="margin:4px 0 16px">${esc(DB.cur)} · ${rank(s.points)}</p>
+  <div class="stats">
+    <div class="stat"><b>${ar(s.points)}</b><span>مجموع النقاط</span></div>
+    <div class="stat"><b>${ar(tot.sN)}</b><span>مسائل صحّحتِها</span></div>
+    <div class="stat"><b>${overall===null?'—':ar(overall)+'٪'}</b><span>الإتقان العام</span></div>
+    <div class="stat"><b>${s.best?ar(s.best):'—'}</b><span>أفضل نتيجة في التحدي</span></div>
+  </div>
+  <div class="sec-title"><h2>مهاراتي</h2></div>
+  <div class="card bars">${Object.entries(SKILLS).map(([k,v])=>{const m=mastery(s.stats[k]);
+    return `<div class="barrow"><div class="lbl"><span>${v.name} ${levelTag(m)}</span><span class="muted">${m===null?'':ar(m)+'٪'}</span></div><div class="track"><div class="fill" style="width:${m||0}%;background:${barColor(m)}"></div></div></div>`}).join('')}</div>
+  ${mastered.length?`<div class="sec-title"><h2>أتقنتِ 🎖️</h2></div><div class="row">${mastered.map(k=>`<span class="tag t-good" style="font-size:.9rem;padding:4px 12px">${SKILLS[k].name}</span>`).join('')}</div>`:''}
+  <div class="sec-title"><h2>أخطاء تحتاج انتباهك</h2></div>
+  ${misses.length?`<div class="misslist">${misses.map(([r,c])=>`<div class="miss"><div><b>${REASONS[r]}</b> <span class="tag t-low">${ar(c)} مرات</span><p>${esc(TIPS[r])}</p></div><button class="btn sm" data-sk="${REASON_SKILL[r]}">تدرّبي</button></div>`).join('')}</div>`
+    :`<div class="card muted">لا توجد أخطاء متكررة بعد — ابدئي التصحيح لتظهر هنا.</div>`}`;
+  host.querySelectorAll('[data-sk]').forEach(b=>b.onclick=()=>{show('practice');startPractice(b.dataset.sk)});
+}
+
+/* ================= لوحة المعلمة ================= */
+function renderTeacher(){
+  const host=$('#v-teacher');
+  if(!teacherOK){
+    host.innerHTML=`<div class="card namebox"><h2>لوحة المعلمة 👩‍🏫</h2><p class="muted small">أدخلي الرمز للمتابعة.</p>
+    <div class="row"><input class="field" id="pin" type="password" inputmode="numeric" placeholder="الرمز" style="max-width:160px;text-align:center"><button class="btn" id="pinGo">دخول</button></div><div class="fb" id="pfb"></div></div>`;
+    const go=()=>{if($('#pin').value===DB.pin){teacherOK=true;renderTeacher()}else{$('#pfb').className='fb bad';$('#pfb').textContent='الرمز غير صحيح.'}};
+    $('#pinGo').onclick=go;$('#pin').onkeydown=e=>{if(e.key==='Enter')go()};return;
+  }
+  const studs=Object.entries(DB.students);
+  const agg={},missAll={};let solved=0;
+  studs.forEach(([,s])=>{
+    Object.entries(s.stats).forEach(([k,st])=>{const a=agg[k]||(agg[k]={sN:0,s:0,rN:0,r:0,fN:0,f:0});Object.keys(a).forEach(x=>a[x]+=st[x]);solved+=st.sN});
+    Object.entries(s.miss).forEach(([r,c])=>missAll[r]=(missAll[r]||0)+c);
+  });
+  const tot={sN:0,s:0,rN:0,r:0,fN:0,f:0};Object.values(agg).forEach(st=>Object.keys(tot).forEach(k=>tot[k]+=st[k]));
+  const missSorted=Object.entries(missAll).sort((a,b)=>b[1]-a[1]);const maxMiss=missSorted.length?missSorted[0][1]:1;
+  const byId={};allProblems().forEach(p=>byId[p.id]=p);
+  const hard=Object.entries(DB.prob).filter(([id,v])=>byId[id]&&v.n>0).map(([id,v])=>({p:byId[id],rate:Math.round(v.fail/v.n*100),n:v.n})).sort((a,b)=>b.rate-a.rate).slice(0,5);
+  host.innerHTML=`
+  <div class="row" style="justify-content:space-between"><h1 style="font-size:1.4rem">لوحة المعلمة 👩‍🏫</h1><button class="btn ghost sm" onclick="teacherOK=false;show('home')">خروج</button></div>
+  <p class="muted small" style="margin:4px 0 16px">البيانات المعروضة محفوظة على هذا الجهاز.</p>
+  <div class="stats">
+    <div class="stat"><b>${ar(studs.length)}</b><span>طالبة</span></div>
+    <div class="stat"><b>${ar(solved)}</b><span>مسألة مصحّحة</span></div>
+    <div class="stat"><b>${mastery(tot)===null?'—':ar(mastery(tot))+'٪'}</b><span>متوسط الإتقان</span></div>
+    <div class="stat"><b>${ar(allProblems().length)}</b><span>مسألة في المنصة</span></div>
+  </div>
+
+  <div class="sec-title"><h2>الأخطاء الشائعة لدى الطالبات</h2></div>
+  <div class="card bars">${missSorted.length?missSorted.map(([r,c])=>`<div class="barrow"><div class="lbl"><span>${REASONS[r]}</span><span class="muted">${ar(c)}</span></div><div class="track"><div class="fill" style="width:${Math.round(c/maxMiss*100)}%;background:var(--red)"></div></div></div>`).join(''):'<span class="muted">لا توجد بيانات بعد.</span>'}</div>
+
+  <div class="sec-title"><h2>الإتقان حسب المهارة</h2></div>
+  <div class="card bars">${Object.entries(SKILLS).map(([k,v])=>{const m=mastery(agg[k]);return `<div class="barrow"><div class="lbl"><span>${v.name} ${levelTag(m)}</span><span class="muted">${m===null?'':ar(m)+'٪'}</span></div><div class="track"><div class="fill" style="width:${m||0}%;background:${barColor(m)}"></div></div></div>`}).join('')}</div>
+
+  <div class="sec-title"><h2>أصعب المسائل</h2></div>
+  <div class="card">${hard.length?`<div class="tablewrap"><table><tr><th>المسألة</th><th>المهارة</th><th>نسبة التعثّر</th></tr>${hard.map(h=>`<tr><td>${fm(h.p.expr)}</td><td>${SKILLS[h.p.skill].name}</td><td>${ar(h.rate)}٪ <span class="muted small">(${ar(h.n)} محاولة)</span></td></tr>`).join('')}</table></div>`:'<span class="muted">لا توجد بيانات بعد.</span>'}</div>
+
+  <div class="sec-title"><h2>الطالبات</h2><button class="btn ghost sm" id="csv">تصدير النتائج CSV</button></div>
+  <div class="card">${studs.length?`<div class="tablewrap"><table><tr><th>الاسم</th><th>النقاط</th><th>مسائل</th><th>الإتقان</th><th>أكثر خطأ</th></tr>${studs.map(([n,s])=>{const t={sN:0,s:0,rN:0,r:0,fN:0,f:0};Object.values(s.stats).forEach(st=>Object.keys(t).forEach(k=>t[k]+=st[k]));const top=Object.entries(s.miss).sort((a,b)=>b[1]-a[1])[0];const m=mastery(t);
+    return `<tr><td>${esc(n)}</td><td>${ar(s.points)}</td><td>${ar(t.sN)}</td><td>${m===null?'—':ar(m)+'٪'}</td><td class="small">${top?REASONS[top[0]]:'—'}</td></tr>`}).join('')}</table></div>`:'<span class="muted">لم تسجّل أي طالبة بعد.</span>'}</div>
+
+  <div class="sec-title"><h2>إضافة مسألة الأسبوع ⭐</h2></div>
+  <div class="card">
+    <div class="two">
+      <div><label class="lb">المهارة</label><select class="field" id="f-skill">${Object.entries(SKILLS).map(([k,v])=>`<option value="${k}">${v.name}</option>`).join('')}</select></div>
+      <div><label class="lb">المستوى</label><select class="field" id="f-level"><option value="1">سهل</option><option value="2">متوسط</option><option value="3">صعب</option></select></div>
+    </div>
+    <div class="two">
+      <div><label class="lb">نص السؤال</label><input class="field" id="f-q" value="احسبي:"></div>
+      <div><label class="lb">المسألة (رياضيًا)</label><input class="field" id="f-expr" dir="ltr" placeholder="3 × (4 − 6)"></div>
+    </div>
+    <label class="lb">خطوات الحل كما كتبتها الطالبة (كل خطوة في سطر، ويمكن إضافة ملاحظة بعد علامة | )</label>
+    <textarea class="field" id="f-steps" dir="ltr" placeholder="4 − 6 = 2 | الأقواس أولًا&#10;3 × 2 = 6"></textarea>
+    <div class="two">
+      <div><label class="lb">رقم الخطوة الخاطئة (٠ = الحل صحيح)</label><input class="field" id="f-wrong" type="number" min="0" value="1"></div>
+      <div><label class="lb">سبب الخطأ</label><select class="field" id="f-reason">${Object.entries(REASONS).map(([k,v])=>`<option value="${k}">${v}</option>`).join('')}</select></div>
+    </div>
+    <div class="two">
+      <div><label class="lb">الناتج الصحيح</label><input class="field" id="f-ans" dir="ltr" placeholder="-6 أو 3/4"></div>
+      <div></div>
+    </div>
+    <label class="lb">خطوات الحل الصحيح (كل خطوة في سطر، والملاحظة بعد | )</label>
+    <textarea class="field" id="f-fix" dir="ltr" placeholder="4 − 6 = −2 | طرح عدد أكبر من أصغر&#10;3 × (−2) = −6"></textarea>
+    <label class="lb">شرح مبسّط</label>
+    <input class="field" id="f-exp" placeholder="مثال: عند طرح عدد أكبر من عدد أصغر يكون الناتج سالبًا.">
+    <div class="row" style="margin-top:14px"><button class="btn" id="addP">إضافة المسألة</button></div>
+    <div class="fb" id="afb"></div>
+  </div>
+
+  <div class="sec-title"><h2>مسائل الأسبوع الحالية</h2></div>
+  <div class="plist">${DB.custom.length?DB.custom.map((p,i)=>`<div class="pitem"><div>${fm(p.expr)} <span class="chip">${SKILLS[p.skill].name}</span> <span class="small muted">${LV[p.level]}</span></div><button class="btn ghost sm" data-del="${i}">حذف</button></div>`).join(''):'<div class="card muted">لم تُضف مسائل هذا الأسبوع بعد.</div>'}</div>
+  <div class="card" style="margin-top:12px">
+    <b>نقل المسائل لأجهزة أخرى</b>
+    <p class="small muted" style="margin:4px 0 10px">صدّري المسائل ثم استوردِيها في جهاز آخر، أو الصقيها داخل الملف في <span class="m">WEEKLY</span> لتظهر لكل الطالبات.</p>
+    <textarea class="field" id="io" dir="ltr" placeholder="[ ... ]"></textarea>
+    <div class="row" style="margin-top:10px"><button class="btn ghost sm" id="exp">تصدير</button><button class="btn ghost sm" id="imp">استيراد</button></div>
+    <div class="fb" id="iofb"></div>
+  </div>
+
+  <div class="sec-title"><h2>الإعدادات</h2></div>
+  <div class="card">
+    <div class="row"><input class="field" id="newpin" type="password" inputmode="numeric" placeholder="رمز جديد" style="max-width:160px"><button class="btn ghost sm" id="setpin">تغيير الرمز</button>
+    <button class="btn ghost sm" id="wipe" style="color:var(--red);border-color:#F2C1BC">مسح بيانات الطالبات</button></div>
+    <div class="fb" id="sfb"></div>
+  </div>`;
+
+  host.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{if(confirm('حذف هذه المسألة؟')){DB.custom.splice(+b.dataset.del,1);save();renderTeacher()}});
+  $('#addP').onclick=addProblem;
+  $('#exp').onclick=()=>{$('#io').value=JSON.stringify(DB.custom,null,1);$('#io').select();try{navigator.clipboard.writeText($('#io').value)}catch(e){}$('#iofb').className='fb good';$('#iofb').textContent='تم التصدير ونسخه.'};
+  $('#imp').onclick=()=>{try{const a=JSON.parse($('#io').value);if(!Array.isArray(a))throw 0;const ok=a.filter(p=>p&&p.expr&&Array.isArray(p.steps)&&SKILLS[p.skill]&&REASONS[p.reason]);ok.forEach(p=>{if(!DB.custom.some(c=>c.id===p.id))DB.custom.push(p)});save();renderTeacher()}catch(e){$('#iofb').className='fb bad';$('#iofb').textContent='النص غير صالح.'}};
+  $('#csv').onclick=exportCSV;
+  $('#setpin').onclick=()=>{const v=$('#newpin').value.trim();if(v.length<4){$('#sfb').className='fb bad';$('#sfb').textContent='الرمز ٤ خانات على الأقل.';return}DB.pin=v;save();$('#sfb').className='fb good';$('#sfb').textContent='تم تغيير الرمز.'};
+  $('#wipe').onclick=()=>{if(confirm('سيتم حذف كل نقاط الطالبات وإحصاءاتهن على هذا الجهاز. متأكدة؟')){DB.students={};DB.prob={};DB.cur=null;save();renderTeacher();renderWho()}};
+}
+function parseLines(t){return t.split('\n').map(l=>l.trim()).filter(Boolean).map(l=>{const[m,...n]=l.split('|');return {m:m.trim(),n:n.join('|').trim()}})}
+function addProblem(){
+  const fb=$('#afb'),err=t=>{fb.className='fb bad';fb.textContent=t};
+  const expr=$('#f-expr').value.trim(),steps=parseLines($('#f-steps').value),w=parseInt($('#f-wrong').value,10),ans=$('#f-ans').value.trim(),fix=parseLines($('#f-fix').value);
+  if(!expr)return err('اكتبي المسألة.');
+  if(steps.length<2)return err('أضيفي خطوتين على الأقل.');
+  if(isNaN(w)||w<0||w>steps.length)return err('رقم الخطوة الخاطئة غير صحيح.');
+  if(isNaN(num(ans)))return err('اكتبي الناتج الصحيح عددًا أو كسرًا.');
+  if(w>0&&!fix.length)return err('أضيفي خطوات الحل الصحيح.');
+  DB.custom.push({id:'c'+Date.now(),skill:$('#f-skill').value,level:+$('#f-level').value,q:$('#f-q').value.trim()||'احسبي:',expr,steps,wrong:w-1,reason:$('#f-reason').value,answer:ans.replace(/−/g,'-'),fix,explain:$('#f-exp').value.trim()||TIPS[$('#f-reason').value]});
+  save();renderTeacher();
+}
+function exportCSV(){
+  const rows=[['الاسم','النقاط','المسائل','الإتقان %','أفضل نتيجة تحدي',...Object.values(SKILLS).map(s=>s.name+' %')]];
+  Object.entries(DB.students).forEach(([n,s])=>{const t={sN:0,s:0,rN:0,r:0,fN:0,f:0};Object.values(s.stats).forEach(st=>Object.keys(t).forEach(k=>t[k]+=st[k]));
+    rows.push([n,s.points,t.sN,mastery(t)??'',s.best,...Object.keys(SKILLS).map(k=>mastery(s.stats[k])??'')])});
+  const csv='\uFEFF'+rows.map(r=>r.map(c=>`"${String(c).replace(/"/g,'""')}"`).join(',')).join('\n');
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.download='wain-ghalatt-results.csv';a.click();
+}
+
+show('home');
+</script>
+</body>
+</html>
